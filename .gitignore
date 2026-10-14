@@ -1,0 +1,10 @@
+target/
+*.class
+*.log
+.DS_Store
+.idea/
+.vscode/
+campuslock.db
+campuslock.db-shm
+campuslock.db-wal
+.env

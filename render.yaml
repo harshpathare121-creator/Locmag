@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: campuslock-java
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CAMPUSLOCK_DB_PATH
+        value: /var/data/campuslock.db
+    disk:
+      name: campuslock-data
+      mountPath: /var/data
+      sizeGB: 1
