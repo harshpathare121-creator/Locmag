@@ -122,3 +122,9 @@ Use your existing GitHub repository `locmag`. Upload the **contents of this proj
 
 ## Folder-less repository layout
 This version intentionally keeps the Java source files, `index.html`, `application.properties`, `pom.xml`, and `Dockerfile` in the repository root. The Maven build is customized for root-level Java files. Do not move files into `src/` folders.
+
+
+## Startup fix for the flat layout
+All Java files remain in the repository root, but each Java file declares `package com.campuslock;`. This is important: leaving Spring Boot's main class in Java's default package can make component scanning inspect unrelated dependency classes and fail during startup. The Maven compiler is configured to compile the root-level `*.java` files, and the Spring Boot plugin explicitly uses `com.campuslock.CampusLockApplication` as its main class.
+
+After uploading this ZIP, check Render logs for `Started CampusLockApplication`. This archive has not been built in this environment because Maven is not installed here, so verify the Render build before treating the deployment as fixed.
