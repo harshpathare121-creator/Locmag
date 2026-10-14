@@ -118,3 +118,7 @@ Use your existing GitHub repository `locmag`. Upload the **contents of this proj
 - Session-based authentication is used; keep the frontend and backend on the same origin as configured here.
 - For a public production system, add HTTPS (Render provides it), rate limiting, password reset, stronger audit logging, backups, and a more complete security review.
 - SQLite supports this college demo well, but a single SQLite database is not ideal for high concurrent write traffic.
+
+
+## Folder-less repository layout
+This version intentionally keeps the Java source files, `index.html`, `application.properties`, `pom.xml`, and `Dockerfile` in the repository root. The Maven build is customized for root-level Java files. Do not move files into `src/` folders.

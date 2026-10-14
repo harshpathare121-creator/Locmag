@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: campuslock-java
+    name: locmag
     runtime: docker
     plan: starter
     healthCheckPath: /api/health
